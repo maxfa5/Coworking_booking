@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('buildings', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('count_floor');
+            $table->integer('count_floor')->nullable();
             $table->time('open_at');
             $table->time('close_at');
             $table->string('address');
