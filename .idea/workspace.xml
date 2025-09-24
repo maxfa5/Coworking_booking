@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="759e7dbf-315d-4a6b-9247-59c534b8600e" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <pharConfigPath>$PROJECT_DIR$/60931FMR/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/60931FMR/vendor/composer" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psr/event-dispatcher" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psr/clock" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/nette/schema" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/nette/utils" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/league/uri-interfaces" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/league/config" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/league/mime-type-detection" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/league/commonmark" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/league/uri" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/staabm/side-effects-detector" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/dflydev/dot-access-data" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/laravel/serializable-closure" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/laravel/pint" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/laravel/prompts" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/laravel/pail" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/laravel/sail" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/translation-contracts" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-intl-idn" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/mime" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-php85" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/uid" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/clock" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-intl-normalizer" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-uuid" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/error-handler" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/service-contracts" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/event-dispatcher-contracts" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-php80" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/mailer" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/symfony/polyfill-php84" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/fakerphp/faker" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/carbonphp/carbon-doctrine-types" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/fruitcake/php-cors" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/phpoption/phpoption" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/cli-parser" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/lines-of-code" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/code-unit" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/complexity" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/guzzlehttp/uri-template" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/nunomaduro/termwind" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/tijsverkoyen/css-to-inline-styles" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/60931FMR/vendor/graham-campbell/result-type" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="32E7AK8CFChXjmPC5w4BXTcllMN" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="759e7dbf-315d-4a6b-9247-59c534b8600e" name="Changes" comment="" />
+      <created>1756973738722</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1756973738722</updated>
+      <workItem from="1756973742347" duration="840000" />
+      <workItem from="1756986851590" duration="407000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
