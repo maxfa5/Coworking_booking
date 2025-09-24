@@ -35,8 +35,9 @@ class CityController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('city', ['city' =>City::all()->where('id', $id)->first()]);
     }
+
 
     /**
      * Show the form for editing the specified resource.

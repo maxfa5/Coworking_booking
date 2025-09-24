@@ -3,15 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Object_type; 
-class ObjectTypeController extends Controller
+use App\Models\Booking; 
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('Object_type', ['objects_types' => Object_type::all()]);
+        $bookings = Booking::with(['kovorking', 'user'])->get();
+    
+        return view('bookings', ['bookings' => $bookings]);
     }
 
     /**
@@ -35,8 +37,9 @@ class ObjectTypeController extends Controller
      */
     public function show(string $id)
     {
-        return view('object_type', ['object_type' =>Object_type::all()->where('id', $id)->first()]);
+        return view('booking', ['booking' =>Booking::all()->where('id', $id)->first()]);
     }
+
     /**
      * Show the form for editing the specified resource.
      */

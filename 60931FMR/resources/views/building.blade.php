@@ -7,7 +7,10 @@
     <title>609-31</title>
 </head>
 <body>
-    <h2>Список строений:</h2>
+<h2>{{$building ? "Список строений: ".$building->name : "Неверный ID брони"  }}</h2>
+
+    @if($building)
+
     <table border="1">
         <thead>
             <td>id</td>
@@ -22,7 +25,6 @@
             <td>город</td>
 
         </thead>
-        @foreach ($buildings as $building)
         <tr>
             <td>{{$building->id}}</td>
             <td>{{$building->name}}</td>
@@ -33,7 +35,7 @@
             <td>{{ $building->city ? $building->city->name : 'Город не указан' }}</td>
 
         </tr>
-        @endforeach
     </table>
+    @endif
 </body>
 </html>

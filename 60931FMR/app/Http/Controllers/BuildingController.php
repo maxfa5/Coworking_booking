@@ -36,7 +36,7 @@ class BuildingController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('building', ['building' =>Building::all()->where('id', $id)->first()]);
     }
 
     /**

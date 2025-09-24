@@ -7,16 +7,21 @@
     <title>609-31</title>
 </head>
 <body>
-    <h2>Список Типов объектов бронирования:</h2>
+    <h2>Список пользователей:</h2>
     <table border="1">
-        <thead>
+    <thead>
             <td>id</td>
-            <td>Наименование</td>
+            <td>first_name</td>
+            <td>last_name</td>
+            <td>is_super</td>
+
         </thead>
-        @foreach ($objects_types as $object_types)
+        @foreach ($users as $user)
         <tr>
-            <td>{{$object_type->id}}</td>
-            <td>{{$object_type->name}}</td>
+            <td>{{$user->id}}</td>
+            <td>{{$user->first_name}}</td>
+            <td>{{$user->last_name}}</td>
+            <td>{{$user->is_super}}</td>
         </tr>
         @endforeach
     </table>

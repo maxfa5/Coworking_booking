@@ -7,33 +7,31 @@
     <title>609-31</title>
 </head>
 <body>
-    <h2>Список строений:</h2>
+<h2>{{$kovorking ? "Список коворкингов: ".$kovorking->name : "Неверный ID брони"  }}</h2>
+@if($kovorking)
+
     <table border="1">
         <thead>
             <td>id</td>
             <td>Наименование</td>
             <td>количество этажей</td>
             <td>Открывается в</td>
-
             <td>Закрывается в</td>
-
+            <td>количество мест</td>
             <td>адресс</td>
-
-            <td>город</td>
-
         </thead>
-        @foreach ($buildings as $building)
         <tr>
-            <td>{{$building->id}}</td>
-            <td>{{$building->name}}</td>
-            <td>{{$building->count_floor}}</td>
-            <td>{{$building->open_at}}</td>
-            <td>{{$building->close_at}}</td>
-            <td>{{$building->address}}</td>
-            <td>{{ $building->city ? $building->city->name : 'Город не указан' }}</td>
+            <td>{{$kovorking->id}}</td>
+            <td>{{$kovorking->name}}</td>
+            <td>{{$kovorking->floor_number}}</td>
+            <td>{{$kovorking->from_at}}</td>
+            <td>{{$kovorking->to_at}}</td>
+            <td>{{$kovorking->capacity}}</td>
+            <td>{{ $kovorking->building ? $kovorking->building->address : 'Адресс не указан' }}</td>
 
         </tr>
-        @endforeach
     </table>
+    @endif
+
 </body>
 </html>

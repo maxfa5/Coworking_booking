@@ -38,8 +38,9 @@ class KovorkingController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('kovorking', ['kovorking' =>Kovorking::all()->where('id', $id)->first()]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
