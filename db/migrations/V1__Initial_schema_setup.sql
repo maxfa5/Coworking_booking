@@ -15,7 +15,6 @@ CREATE TABLE buildings (
     address TEXT NOT NULL
 );
 
-CREATE TYPE user_role AS ENUM ('SUPER', 'USER');
 
 -- Таблица пользователей
 CREATE TABLE users (
@@ -42,7 +41,7 @@ CREATE TABLE objects_types (
 
 -- Таблица объектов бронирования
 -- from_at и to_at возможное время бронирования объекта, по умолчанию нужно смотреть на время работы оффиса 
-CREATE TABLE objects (
+CREATE TABLE kovorkings (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
     type_id INT REFERENCES objects_types(id) ON DELETE SET NULL,
