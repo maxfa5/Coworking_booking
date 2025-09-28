@@ -38,3 +38,8 @@ Route::get('/kovorking/{id}', [KovorkingController::class,'show']);
 Route::get('/users', [UserController::class,'index']);
 
 Route::get('/user/{id}', [UserController::class,'show']);
+
+Route::get('/buildings/create', [BuildingController::class, 'create']);
+Route::post('/buildings', [BuildingController::class, 'store']);
+Route::get('/building/edit/{id}', [BuildingController::class, 'edit']);
+Route::post('/building/update/{id}', [BuildingController::class, 'update']);

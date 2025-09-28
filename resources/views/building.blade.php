@@ -31,7 +31,6 @@
             <td>{{$building->count_floor}}</td>
             <td>{{$building->open_at}}</td>
             <td>{{$building->close_at}}</td>
-            <td>{{$building->address}}</td>
             <td>{{ $building->city ? $building->city->name : 'Город не указан' }}</td>
 
         </tr>

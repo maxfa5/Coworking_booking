@@ -20,6 +20,7 @@
             <td>адресс</td>
 
             <td>город</td>
+            <td>действия</td>
 
         </thead>
         @foreach ($buildings as $building)
@@ -31,7 +32,10 @@
             <td>{{$building->close_at}}</td>
             <td>{{$building->address}}</td>
             <td>{{ $building->city ? $building->city->name : 'Город не указан' }}</td>
-
+            <td>
+                <a href="{{ url('building/destroy/'.$building->id)}}">Удалить </a>
+                <a href="{{ url('building/edit/'.$building->id)}}">Редактировать </a>
+            </td>
         </tr>
         @endforeach
     </table>
