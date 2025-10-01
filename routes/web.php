@@ -43,3 +43,6 @@ Route::get('/buildings/create', [BuildingController::class, 'create']);
 Route::post('/buildings', [BuildingController::class, 'store']);
 Route::get('/building/edit/{id}', [BuildingController::class, 'edit']);
 Route::post('/building/update/{id}', [BuildingController::class, 'update']);
+
+Route::get('/building/destroy/{id}', [BuildingController::class, 'destroy']);
+

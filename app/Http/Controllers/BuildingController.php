@@ -71,7 +71,7 @@ class BuildingController extends Controller
         $request->validate([
             'name' => 'required|max:255',
             'city_id' => 'required|exists:cities,id',
-            'count_floor' => 'nullable|integer|min:1|max:100',
+            'count_floor' => 'nullable|integer|min:1|max:1000',
             'open_at' => 'required',
             'close_at' => 'required',
             'address' => 'required',
@@ -97,12 +97,8 @@ class BuildingController extends Controller
     {
         $building = Building::find($id);
         
-        if (!$building) {
-            return redirect('/building')->with('error', 'Здание не найдено');
-        }
-
-        $building->delete();
-        return redirect('/building')->with('success', 'Здание успешно удалено!');
+        Building::destroy($id);
+        return redirect('/buildings');
         
     }
 }
