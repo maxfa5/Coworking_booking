@@ -30,9 +30,13 @@ class BuildingController extends Controller
      */
     public function store(Request $request)
     {
-        $validated = $request->validate([
-            'name'=> 'required|unique:buildings|max:255',
-            'city_id'=> 'integer'
+        $request->validate([
+            'name' => 'required|max:255',
+            'city_id' => 'required|exists:cities,id',
+            'count_floor' => 'nullable|integer|min:1|max:1000',
+            'open_at' => 'required',
+            'close_at' => 'required',
+            'address' => 'required',
         ]);
         $building = new Building($validated);
         $building->save();
