@@ -70,7 +70,7 @@ class BuildingController extends Controller
         $building = Building::find($id);
         
         if (!$building) {
-            return redirect('/building')->with('error', 'Здание не найдено');
+            return redirect('/buildings');
         }
         $request->validate([
             'name' => 'required|max:255',
@@ -90,7 +90,7 @@ class BuildingController extends Controller
             'address' => $request->address,
         ]);
 
-        return redirect('/buildings')->with('success', 'Здание успешно обновлено!');
+        return redirect('/buildings');
 
     }
 
