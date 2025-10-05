@@ -22,8 +22,10 @@
             <td>{{$booking->start_time}}</td>
             <td>{{$booking->end_time}}</td>
             <td>{{$booking->user->id}}</td>
-            <td>{{$booking->Kovorking->name}}</td>        </tr>
+            <td>{{$booking->kovorking->name}}</td>        </tr>
         @endforeach
     </table>
+    {{ $bookings->links() }}
+
 </body>
 </html>
