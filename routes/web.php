@@ -7,6 +7,7 @@ use App\Http\Controllers\KovorkingController;
 use App\Http\Controllers\ObjectTypeController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 
 
@@ -38,11 +39,21 @@ Route::get('/kovorking/{id}', [KovorkingController::class,'show']);
 Route::get('/users', [UserController::class,'index']);
 
 Route::get('/user/{id}', [UserController::class,'show']);
-
-Route::get('/buildings/create', [BuildingController::class, 'create']);
 Route::post('/buildings', [BuildingController::class, 'store']);
-Route::get('/building/edit/{id}', [BuildingController::class, 'edit']);
-Route::post('/building/update/{id}', [BuildingController::class, 'update']);
 
-Route::get('/building/destroy/{id}', [BuildingController::class, 'destroy']);
+Route::get('/buildings/create', [BuildingController::class, 'create'])->middleware('auth');
+Route::get('/building/edit/{id}', [BuildingController::class, 'edit'])->middleware('auth');
+Route::post('/building/update/{id}', [BuildingController::class, 'update'])->middleware('auth');
 
+Route::get('/building/destroy/{id}', [BuildingController::class, 'destroy'])->middleware('auth');
+
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+
+Route::get('/logout', [LoginController::class, 'logout']);
+
+Route::post('/auth', [LoginController::class, 'authenticate']);
+
+Route::get('error', function (){
+    return view ('error', ['message' => session('message')]);
+    }
+);

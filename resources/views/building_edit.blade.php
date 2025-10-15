@@ -8,7 +8,7 @@
     <h2>Редактирование здания: {{ $building->name }}</h2>
 
     <form method="POST" action="{{ url('building/update/' . $building->id) }}" >
-
+    @csrf
         <table border="1">
             <tr>
                 <td><label for="name">Название здания</label></td>

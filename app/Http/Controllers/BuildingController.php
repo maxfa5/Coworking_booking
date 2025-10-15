@@ -5,7 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Building; 
 use App\Models\City; 
+use App\Models\User; 
+
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Gate;
+
 class BuildingController extends Controller
 {
     /**
@@ -40,7 +44,7 @@ class BuildingController extends Controller
         ]);
         $building = new Building($validated);
         $building->save();
-        return redirect('/building');
+        return redirect('/buildings');
     }
 
     /**
@@ -56,6 +60,15 @@ class BuildingController extends Controller
      */
     public function edit(string $id)
     {
+        $building = Building::find($id);
+        
+        if (!$building) {
+            return redirect('/buildings');
+        }
+        if (! Gate::allows('edit-building', Building::all()->where('id', $id)->first())){
+            return redirect('/error')->with('message',
+                "У вас не разрешения на изменения строения номер ". $id);
+        }
         return view('building_edit', [
             'building'=>Building::all()->where('id', $id)->first(),
             'cities'=>City::all()
@@ -72,6 +85,12 @@ class BuildingController extends Controller
         if (!$building) {
             return redirect('/buildings');
         }
+
+        if (! Gate::allows('edit-building', Building::all()->where('id', $id)->first())){
+            return redirect('/error')->with('message',
+                "У вас не разрешения на изменения строения номер ". $id);
+        }
+        
         $request->validate([
             'name' => 'required|max:255',
             'city_id' => 'required|exists:cities,id',
@@ -101,7 +120,15 @@ class BuildingController extends Controller
     {
         $building = Building::find($id);
         
-        Building::destroy($id);
+        if (!$building) {
+            return redirect('/buildings');
+        }
+        if (! Gate::allows('destroy-building', Building::all()->where('id', $id)->first())){
+            return redirect('/error')->with('message',
+                "У вас не разрешения на удаление строения номер ". $id);
+        }
+        $building->delete();
+
         return redirect('/buildings');
         
     }

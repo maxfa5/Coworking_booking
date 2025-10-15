@@ -11,18 +11,10 @@ class BookingController extends Controller
      */
     public function index(Request $request)
     {
-        try {
-            $perPage = $request->perpage ?? 2;
-            $bookings = Booking::with(['kovorking', 'user'])
-                ->paginate($perPage)
-                ->withQueryString();
-        
-            return view('bookings', compact('bookings'));
-        } catch (\Exception $e) {
-            // Log the error and return a safe response
-            \Log::error('Booking index error: ' . $e->getMessage());
-            return back()->with('error', 'Произошла ошибка при загрузке данных');
-        }
+        $perpage = $request->perpage ?? 2;
+        $bookings = Booking::with(['kovorking', 'user'])->paginate($perpage)->withQueryString();
+    
+        return view('bookings', ['bookings' => $bookings]);
     }
 
     /**

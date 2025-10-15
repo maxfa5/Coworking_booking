@@ -4,9 +4,13 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Gate;
+use App\Models\User; 
 
+use App\Models\Building;
 class AppServiceProvider extends ServiceProvider
 {
+
     /**
      * Register any application services.
      */
@@ -21,5 +25,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Paginator::defaultView('pagination::default');
+        Gate::define('destroy-building', function (User $user, building $building){
+            return $user->is_admin OR $building->city->name !='Москва';
+        });
+    
+        Gate::define('edit-building', function (User $user, building $building){
+            return $user->is_admin OR $building->city->name !='Москва';
+        });
+    
     }
 }
