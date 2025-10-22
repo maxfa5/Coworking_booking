@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
                 'is_super' => 1
             ],
             [
-                'name' => 'Иван',
+                'name' => 'Мария',
                 'first_name' => 'Мария',
                 'email' => 'maria.sidorova@example.com',
                 'password' => bcrypt('password'),

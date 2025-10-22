@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Building extends Model
 {
     protected $primaryKey = 'id';
-    protected $fillable = ['name','count_floor','open_at','close_at','address', 'timezone'];
+    protected $fillable = ['name','count_floor','city_id','open_at','close_at','address', 'timezone'];
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);

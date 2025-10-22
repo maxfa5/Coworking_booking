@@ -26,12 +26,14 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::defaultView('pagination::default');
         Gate::define('destroy-building', function (User $user, building $building){
-            return $user->is_admin OR $building->city->name !='Москва';
+            return $user->is_super OR $building->city->name !='Москва';
         });
     
         Gate::define('edit-building', function (User $user, building $building){
-            return $user->is_admin OR $building->city->name !='Москва';
+            return $user->is_super OR $building->city->name !='Москва';
         });
-    
+        Gate::define('create-building', function(User $user, building $building){
+            return $user->is_super OR $building->city->name !='Москва';
+        });
     }
 }

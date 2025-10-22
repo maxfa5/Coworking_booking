@@ -13,16 +13,23 @@ class LoginController extends Controller
             'email' => ['required', 'email'],
             'password' =>['required'],
             ]);
+            $request->session()->forget(['success', 'error', 'message']);
+
         if (Auth::attempt($credentials)){
             $request->session()->regenerate();
 
-            return redirect()->intended('login');
+            return  back()->with([
+                'success'=>'Вы успешно вошли из системы.',
+            ]);
         }
         return back()->withErrors([
             'error'=>'The provided credentials do not match our records.',
         ])->onlyInput('email', 'password');
     }
+    
     public function login(Request $request){
+        $request->session()->forget(['success', 'error', 'message']);
+
         return view('login', ['user' => Auth::user()]);
     }
 
@@ -30,6 +37,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('login');
+        
+        return back()->withErrors('success', 'Вы успешно вышли из системы.');
     }
 }

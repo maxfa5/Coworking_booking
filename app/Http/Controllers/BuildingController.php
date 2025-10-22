@@ -26,6 +26,7 @@ class BuildingController extends Controller
      */
     public function create()
     {
+        
         return view('building_create', ['cities' => City::all()]);
     }
 
@@ -34,7 +35,7 @@ class BuildingController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validated = $request->validate([
             'name' => 'required|max:255',
             'city_id' => 'required|exists:cities,id',
             'count_floor' => 'nullable|integer|min:1|max:1000',
@@ -42,9 +43,15 @@ class BuildingController extends Controller
             'close_at' => 'required',
             'address' => 'required',
         ]);
+        
         $building = new Building($validated);
+        if (! Gate::allows('create-building', $building)){
+            return redirect('/buildings')->with('message',
+                "У вас не разрешения на добавление строений в городе Москва " );
+        }
         $building->save();
-        return redirect('/buildings');
+        
+        return redirect('/buildings'); 
     }
 
     /**
@@ -52,7 +59,7 @@ class BuildingController extends Controller
      */
     public function show(string $id)
     {
-        return view('building', ['building' =>Building::all()->where('id', $id)->first()]);
+        return view('building', ['building' =>$building->where('id', $id)->first()]);
     }
 
     /**
@@ -65,8 +72,8 @@ class BuildingController extends Controller
         if (!$building) {
             return redirect('/buildings');
         }
-        if (! Gate::allows('edit-building', Building::all()->where('id', $id)->first())){
-            return redirect('/error')->with('message',
+        if (! Gate::allows('edit-building', $building->where('id', $id)->first())){
+            return redirect('/buildings')->with('message',
                 "У вас не разрешения на изменения строения номер ". $id);
         }
         return view('building_edit', [
@@ -87,7 +94,7 @@ class BuildingController extends Controller
         }
 
         if (! Gate::allows('edit-building', Building::all()->where('id', $id)->first())){
-            return redirect('/error')->with('message',
+            return redirect('/buildings')->with('error',
                 "У вас не разрешения на изменения строения номер ". $id);
         }
         
@@ -113,6 +120,8 @@ class BuildingController extends Controller
 
     }
 
+
+
     /**
      * Remove the specified resource from storage.
      */
@@ -124,12 +133,13 @@ class BuildingController extends Controller
             return redirect('/buildings');
         }
         if (! Gate::allows('destroy-building', Building::all()->where('id', $id)->first())){
-            return redirect('/error')->with('message',
+            return redirect('/buildings')->with('error',
                 "У вас не разрешения на удаление строения номер ". $id);
         }
         $building->delete();
 
-        return redirect('/buildings');
+        return redirect('/buildings')->with('success', "Успешно удалён объект №". $id);
+
         
     }
 }
