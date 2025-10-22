@@ -116,7 +116,7 @@ class BuildingController extends Controller
             'address' => $request->address,
         ]);
 
-        return redirect('/buildings');
+        return redirect('/buildings')->with('success', "Успешно изменён объект №". $id);;
 
     }
 
