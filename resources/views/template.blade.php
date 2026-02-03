@@ -14,8 +14,11 @@
 </head>
 <body class="d-flex flex-column h-100">
     @include('navBar')
+    @if(auth()->check())
+    @else
     @include('login')
-    
+    @endif
+
     @include('error')
 
     @yield('content')

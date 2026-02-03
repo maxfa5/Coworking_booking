@@ -35,6 +35,11 @@
                             <i class="fa fa-user-circle"></i> {{ auth()->user()->name }}
                         </span>
                     </li>
+                    <li class="nav-item">
+
+                    <a class="navbar-text text-white" href="{{ url('logout') }}"> Выйти из системы</a>
+                    </li>
+
                 @else
                     <li class="nav-item">
                         <span class="navbar-text text-white">
