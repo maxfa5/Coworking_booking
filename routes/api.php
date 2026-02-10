@@ -9,18 +9,17 @@ use App\Http\Controllers\BookingControllerApi;
 use App\Http\Controllers\UserControllerApi;
 use App\Http\Controllers\AuthController;
 use Illuminate\Http\Request;
-Route::middleware('auth:sanctum')->get('/users', [UserControllerApi::class,'index']);
-
-Route::middleware('auth:sanctum')->get('/user/{id}', [UserControllerApi::class,'show']);
-Route::middleware('auth:sanctum')->get('/user', function (Request $request){
-    return $request->user();
+Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::get('/users', [UserControllerApi::class,'index']);
+    Route::get('/user/{id}', [UserControllerApi::class,'show']);
+    Route::get('/user', function (Request $request){
+        return $request->user();
+    });
+    Route::get('/logout',[AuthController::class, 'logout']);   
 });
 
 Route::get('/bookings', [BookingControllerApi::class,'index']);
-
 Route::get('/booking/{id}', [BookingControllerApi::class,'show']);
 Route::get('/kovorkings', [KovorkingControllerApi::class,'index']);
 Route::get('/kovorking/{id}', [KovorkingControllerApi::class,'show']);
-
 Route::post('/login', [AuthController::class, 'login']);
-Route::middleware('auth:sanctum')->get('/logout',[AuthController::class, 'logout']);
