@@ -18,6 +18,10 @@ class BookingControllerApi extends Controller
         return response($bookings);
     }
 
+    public function total()
+    {
+        return response(Booking::all()->count());
+    }
     /**
      * Store a newly created resource in storage.
      */

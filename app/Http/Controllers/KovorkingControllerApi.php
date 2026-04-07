@@ -10,9 +10,13 @@ class KovorkingControllerApi extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $kovorkings = Kovorking::with('building')->get();
+        $perpage = $request->perpage ?? 10;
+        $kovorkings = Kovorking::with('building')
+            ->paginate($perpage)
+            ->withQueryString();
+    
         return response($kovorkings);
     }
 
@@ -23,13 +27,21 @@ class KovorkingControllerApi extends Controller
     {
         //
     }
-
-    /**
-     * Display the specified resource.
-     */
+    public function total()
+    {
+        return response()->json([
+            'total' => Kovorking::count()
+        ]);
+    }
     public function show(string $id)
     {
-        return response(Kovorking::all()->where('id', $id)->first());
+        $kovorking = Kovorking::with('building')->find($id);
+        
+        if (!$kovorking) {
+            return response()->json(['message' => 'Kovorking not found'], 404);
+        }
+        
+        return response()->json($kovorking);
     }
 
     /**
