@@ -28,6 +28,7 @@ Route::get('/buildings/search', [BuildingControllerApi::class, 'search']);
 Route::get('/buildings/paginate', [BuildingControllerApi::class, 'paginate']);
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
+    Route::post('/kovorkings', [KovorkingControllerApi::class, 'store']);
     Route::get('/users', [UserControllerApi::class, 'index']);
     Route::get('/user/{id}', [UserControllerApi::class, 'show']);
     Route::get('/user', function (Request $request) {

@@ -7,7 +7,6 @@ use App\Models\User;
 use Laravel\Sanctum\HasApiTokens; 
 class UserController extends Controller
 {
-    use HasFactory, Notifiable, HasApiTokens; 
     /**
      * Display a listing of the resource.
      */

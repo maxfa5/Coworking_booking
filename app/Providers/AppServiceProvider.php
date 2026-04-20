@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Gate;
 use App\Models\User; 
-
+use App\Models\Kovorking;
 use App\Models\Building;
 class AppServiceProvider extends ServiceProvider
 {
@@ -34,6 +34,14 @@ class AppServiceProvider extends ServiceProvider
         });
         Gate::define('create-building', function(User $user, building $building){
             return $user->is_super OR $building->city->name !='Москва';
+        });
+
+        Gate::define('destroy-kovorking', function (User $user, Kovorking $kovorking) {
+            return $user->is_super;
+        });
+        
+        Gate::define('create-kovorking', function (User $user) {
+            return $user->is_super== true;
         });
     }
 }
