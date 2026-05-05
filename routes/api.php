@@ -26,6 +26,8 @@ Route::get('/building/{id}', [BuildingControllerApi::class, 'show']);
 Route::get('/buildings/city/{cityId}', [BuildingControllerApi::class, 'getByCity']);
 Route::get('/buildings/search', [BuildingControllerApi::class, 'search']);
 Route::get('/buildings/paginate', [BuildingControllerApi::class, 'paginate']);
+Route::get('/kovorkings/{id}', [KovorkingControllerApi::class, 'show']);
+
 
 Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/kovorkings', [KovorkingControllerApi::class, 'store']);
@@ -34,7 +36,13 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-    
+    Route:: post( '/category', [KovorkingControllerApi:: class, 'store']);
+    Route:: delete( '/category/{id}', [KovorkingControllerApi:: class, 'destroy']);
+    Route:: post(  '/category/{id}' , [KovorkingControllerApi:: class, 'update']);
+
+    Route:: post('/kovorkings', [KovorkingControllerApi:: class, 'store']);
+Route:: delete('/kovorkings/{id}', [KovorkingControllerApi:: class, 'destroy']);
+Route:: post('/kovorkings/{id}' , [KovorkingControllerApi:: class, 'update']);
     Route::post('/logout', [AuthController::class, 'logout']);
     
     Route::post('/buildings', [BuildingControllerApi::class, 'store']);

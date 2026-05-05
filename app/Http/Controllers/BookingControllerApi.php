@@ -13,10 +13,14 @@ class BookingControllerApi extends Controller
     public function index(Request $request)
     {
         $perpage = $request->perpage ?? 2;
-        $bookings = Booking::with(['kovorking', 'user'])->paginate($perpage)->withQueryString();
+        $bookings = Booking::with(['kovorking', 'user'])
+        ->paginate($perpage)
+        ->withQueryString()
+        ->where('name', 'LIKE', '%' .$request->search . "%");
     
         return response($bookings);
     }
+
 
     public function total()
     {

@@ -39,7 +39,16 @@ class AppServiceProvider extends ServiceProvider
         Gate::define('destroy-kovorking', function (User $user, Kovorking $kovorking) {
             return $user->is_super;
         });
-        
+        Gate::define('delete-kovorking', function (User $user) {
+            return $user->is_super;
+        });
+        Gate::define('update-kovorking', function (User $user){
+            return $user->is_super;
+        });
+
+        Gate::define('update-kovorking', function (User $user) {
+            return $user->is_super;
+        });
         Gate::define('create-kovorking', function (User $user) {
             return $user->is_super== true;
         });
