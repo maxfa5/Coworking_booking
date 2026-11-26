@@ -29,11 +29,11 @@ jobs:
         run: |
           ssh -i ~/.ssh/id_ed25519 "$SSH_USER@$SSH_HOST" bash -s << 'EOF'
           set -euo pipefail
-          git -C /var/www/example-app pull --ff-only origin main
+          git -C /var/www/Coworking_booking pull --ff-only origin main
           cd /root
-          docker compose build example-app
-          docker compose up -d example-app
-          docker exec example-app php artisan migrate --force
-          docker exec example-app php artisan config:cache
-          docker exec example-app php artisan route:cache
+          docker compose build coworking-app
+          docker compose up -d coworking-app
+          docker exec coworking-app php artisan migrate --force
+          docker exec coworking-app php artisan config:cache
+          docker exec coworking-app php artisan route:cache
           EOF
